@@ -1,7 +1,7 @@
 import Pusher from "pusher";
 export default async function handler(req, res) {
     if (req.method === "POST") {
-        const { app_id, app_key, app_secret, app_cluster, app_channel, app_eventname, app_message } = req.body;
+        const { app_id, app_key, app_secret, app_cluster, app_chanel, app_eventname, app_message } = req.body;
         console.error();
         (req.body);
         const pusher = new Pusher({
@@ -12,7 +12,7 @@ export default async function handler(req, res) {
             useTLS: true,
         });
         try {
-            await pusher.trigger(app_channel, app_eventname, app_message);
+            await pusher.trigger(app_chanel, app_eventname, app_message);
             res.status(200).json({ message: "Event triggered successfully!" });
         } catch (error) {
             console.error(error);
