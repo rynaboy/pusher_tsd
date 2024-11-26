@@ -2,8 +2,6 @@ import Pusher from "pusher";
 export default async function handler(req, res) {
     if (req.method === "POST") {
         const { app_id, app_key, app_secret, app_cluster, app_chanel, app_eventname, app_message } = req.body;
-        console.error();
-        (req.body);
         const pusher = new Pusher({
             appId: app_id,
             key: app_key,
